@@ -13,7 +13,7 @@
 * Index accounts data: *<addr>curl -X POST "localhost:9200/bank/account/_bulk?pretty" --data-binary @c:\Accounts.json</addr>*
 
 ### Run the service
-This example uses olastic war dependency, that already has web.xml and defaut servlet. Just deploy the service on some servlet container.
+This example uses Olastic *war* dependency. It already has web.xml and defaut servlet. Just deploy the service on some servlet container and you are ready to browse your data :thumbsup:
 
 ### Sample queries
 http://localhost:8080/OData.svc/ - Service root
@@ -23,7 +23,12 @@ http://localhost:8080/OData.svc/account?$top=5&$skip=10 - Get 5 account starting
 http://localhost:8080/OData.svc/account('227') - get account with id 227
 http://localhost:8080/OData.svc/account('227')?$format=xml - get xml
 http://localhost:8080/OData.svc/account('227')?$format=json - get json
+http://localhost:8080/OData.svc/employees?$filter=Age ge 55 and Age lt 60 - filter employees by their age
+http://localhost:8080/OData.svc/account?$apply=groupby((city)) - group by city
+http://localhost:8080/OData.svc/account?$apply=groupby((state),aggregate($count as Total))&$orderby=Total desc - group by state, aggregate total count for each state, and sort descending.
+http://localhost:8080/OData.svc/account?$apply=groupby((state),aggregate(balance with max as MaxBalance)) - group by state, aggregate maximum balance for each state
+http://localhost:8080/OData.svc/account?$apply=search(Coleman) - full text search
 
 ### Customization 
-Olastic is build with possibility to extend its classes in order to implement custom functionality.
+Olastic is built with possibility to extend it's classes in order to implement custom functionality.
 It is implemented using Apache Olingo Java library. Please read Olingo documentation before implementing custom logic: https://olingo.apache.org/doc/odata4/index.html
