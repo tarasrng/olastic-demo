@@ -9,8 +9,8 @@
 * Install curl: http://www.confusedbycode.com/curl/#downloads
 * Download accounts json from: https://raw.githubusercontent.com/elastic/elasticsearch/master/docs/src/test/resources/accounts.json
 * Download employee json from: http://ikeptwalking.com/wp-content/uploads/2017/03/Employee50K.zip
-* Index employee data curl -X POST "http://localhost:9200/_bulk?pretty" --data-binary @c:\Employee50K.json
-* Index accounts data: curl -X POST "localhost:9200/bank/account/_bulk?pretty" --data-binary @c:\Accounts.json
+* Index employee data: <addr>curl -X POST "http://localhost:9200/_bulk?pretty" --data-binary @c:\Employee50K.json</addr>
+* Index accounts data: <addr>curl -X POST "localhost:9200/bank/account/_bulk?pretty" --data-binary @c:\Accounts.json</addr>
 
 ### Run the service
 This example uses olastic war dependency, that already has web.xml and defaut servlet. Just deploy the service on some servlet container.
