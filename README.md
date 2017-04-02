@@ -1,5 +1,5 @@
 # Olastic demo
-##Simple project to demonstrate how to use Olastic
+## Simple project to demonstrate how to use Olastic
 
 ### Install Elasticsearch 
 * Download Elasticsearch from https://www.elastic.co/products/elasticsearch
