@@ -8,9 +8,9 @@
 ### Index some test data
 * Install curl: http://www.confusedbycode.com/curl/#downloads
 * Download accounts json from: https://raw.githubusercontent.com/elastic/elasticsearch/master/docs/src/test/resources/accounts.json
-* Download employee json from: http://ikeptwalking.com/wp-content/uploads/2017/03/Employee50K.zip
-* Index employee data: *<addr>curl -X POST "http://localhost:9200/_bulk?pretty" --data-binary @c:\Employee50K.json</addr>*
-* Index accounts data: *<addr>curl -X POST "localhost:9200/bank/account/_bulk?pretty" --data-binary @c:\Accounts.json</addr>*
+* Download employee json from: https://ikeptwalking.com/wp-content/uploads/2017/04/Employees50K.zip
+* Index employee data: *<addr>curl -H 'Content-Type: application/json' -X POST "http://localhost:9200/_bulk?pretty" --data-binary @c:\Employees50K.json</addr>*
+* Index accounts data: *<addr>curl -H 'Content-Type: application/json' -X POST "localhost:9200/bank/account/_bulk?pretty" --data-binary @c:\Accounts.json</addr>*
 
 ### Run the service
 This example uses Olastic *war* dependency. It already has web.xml and defaut servlet. Just deploy the service on some servlet container and you are ready to browse your data :thumbsup:
